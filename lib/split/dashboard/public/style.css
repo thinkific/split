@@ -12,13 +12,13 @@ body {
 .header {
   background: #ededed;
   background: -webkit-gradient(linear, left top, left bottom,
-                color-stop(0%,#576a76),
-                color-stop(100%,#4d5256));
-  background: -moz-linear-gradient(top, #576076 0%, #414e58 100%);
-  background: -webkit-linear-gradient(top, #576a76 0%, #414e58 100%);
-  background: -o-linear-gradient(top, #576a76 0%, #414e58 100%);
-  background: -ms-linear-gradient(top, #576a76 0%, #414e58 100%);
-  background: linear-gradient(top, #576a76 0%, #414e58 100%);
+                color-stop(0%,#3D47A3),
+                color-stop(100%,#100D59));
+  background: -moz-linear-gradient(top, #3D47A3 0%, #100D59 100%);
+  background: -webkit-linear-gradient(top, #3D47A3 0%, #100D59 100%);
+  background: -o-linear-gradient(top, #3D47A3 0%, #100D59 100%);
+  background: -ms-linear-gradient(top, #3D47A3 0%, #100D59 100%);
+  background: linear-gradient(top, #3D47A3 0%, #100D59 100%);
   border-bottom: 1px solid #fff;
   -moz-border-radius-topleft:     5px;
   -webkit-border-top-left-radius: 5px;
@@ -74,10 +74,13 @@ body {
   color: #fff;
 }
 
-.header p.environment {
+.header h4 {
   clear: both;
   padding: 10px 0 0 0;
   color: #BBB;
+}
+
+.header h4.environment {
   font-style: italic;
   float: right;
 }
@@ -120,10 +123,15 @@ body {
   padding: 6px;
 }
 
+#main table tr {
+  background-color: #F2F3F5;
+}
+
 #main table tr th {
   background: #efefef;
   color: #888;
   font-size: 80%;
+  font-weight: bold;
   text-transform:uppercase;
 }
 
@@ -163,8 +171,7 @@ body {
 .experiment {
   background:#fff;
   border: 1px solid #eee;
-  border-bottom:none;
-  margin:30px 0;
+  margin: 30px 0;
 }
 
 .experiment_with_goal {
@@ -172,15 +179,15 @@ body {
 }
 
 .experiment .experiment-header {
-  background: #f4f4f4;
+  background: #CACCD6;
   background: -webkit-gradient(linear, left top, left bottom,
-                color-stop(0%,#f4f4f4),
-                color-stop(100%,#e0e0e0));
-  background: -moz-linear-gradient   (top, #f4f4f4 0%, #e0e0e0 100%);
-  background: -webkit-linear-gradient(top, #f4f4f4 0%, #e0e0e0 100%);
-  background: -o-linear-gradient     (top, #f4f4f4 0%, #e0e0e0 100%);
-  background: -ms-linear-gradient    (top, #f4f4f4 0%, #e0e0e0 100%);
-  background: linear-gradient        (top, #f4f4f4 0%, #e0e0e0 100%);
+                color-stop(0%,#CACCD6),
+                color-stop(100%,#F2F3F5));
+  background: -moz-linear-gradient   (top, #CACCD6 0%, #F2F3F5 100%);
+  background: -webkit-linear-gradient(top, #CACCD6 0%, #F2F3F5 100%);
+  background: -o-linear-gradient     (top, #CACCD6 0%, #F2F3F5 100%);
+  background: -ms-linear-gradient    (top, #CACCD6 0%, #F2F3F5 100%);
+  background: linear-gradient        (top, #CACCD6 0%, #F2F3F5 100%);
   border-top:1px solid #fff;
   overflow:hidden;
   padding:0 10px;
@@ -196,7 +203,7 @@ body {
 }
 
 .experiment h2 .goal {
-  font-style: italic;
+  font-weight: normal;
 }
 
 .experiment h2 .version {
@@ -266,9 +273,9 @@ a.button, button, input[type="submit"] {
   -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.5);
   box-shadow:        0 1px 0 rgba(0,0,0,0.5);
   border:none;
-  -moz-border-radius:   30px;
-  -webkit-border-radius:30px;
-  border-radius:        30px;
+  -moz-border-radius:   4px;
+  -webkit-border-radius:4px;
+  border-radius:        4px;
   color:#2e3035;
   cursor: pointer;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -305,17 +312,45 @@ a.button.red:focus, button.red:focus, input[type="submit"].red:focus {
   background:#895C5C;
 }
 a.button.green, button.green, input[type="submit"].green {
-  background:#8daa92;
+  background:#3D47A3;
 }
-a.button.green:hover, button.green:hover, input[type="submit"].green:hover,
+a.button.green:hover, button.green:hover, input[type="submit"].green:hover
 a.button.green:focus, button.green:focus, input[type="submit"].green:focus {
-  background:#768E7A;
+  background:#100D59;
 }
 
 #filter, #clear-filter {
-  padding: 10px;
+  padding: 4px;
 }
 
+.active-toggle {
+  padding: 4px;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 50px;
+}
+
+.active-toggle .green {
+  margin-left: 8px;
+  background:#3D47A3;
+  padding: 4px 10px;
+  overflow: hidden;
+  -moz-box-shadow:   0 1px 0 rgba(0,0,0,0.5);
+  -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.5);
+  box-shadow:        0 1px 0 rgba(0,0,0,0.5);
+  border:none;
+  -moz-border-radius:   4px;
+  -webkit-border-radius:4px;
+  border-radius:        4px;
+  color:#fff;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  -moz-user-select:   none;
+  -webkit-user-select:none;
+  user-select:        none;
+  white-space: nowrap;
+}
 
 .pagination {
   text-align: center;

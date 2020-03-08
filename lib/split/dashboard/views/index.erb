@@ -1,16 +1,16 @@
 <% if @experiments.any? %>
-  <p class="intro">The list below contains all the registered experiments along with the number of test participants, completed and conversion rate currently in the system.</p>
-
   <input type="text" placeholder="Begin typing to filter" id="filter" />
-  <input type="button" id="toggle-completed" value="Hide completed" />
-  <input type="button" id="toggle-active" value="Hide active" />
-  <input type="button" id="clear-filter" value="Clear filters" />
+  <input type="button" id="clear-filter" class="green" value="Clear filters" />
+
+  <div class='active-toggle'>
+    <input type="button" id="toggle-completed" class="green" value="Hide completed" />
+    <input type="button" id="toggle-active" class="green" value="Hide active" />
+  </div>
 
   <% paginated(@experiments).each do |experiment| %>
     <% if experiment.goals.empty? %>
       <%= erb :_experiment, :locals => {:goal => nil, :experiment => experiment} %>
     <% else %>
-      <%= erb :_experiment_with_goal_header, :locals => {:experiment => experiment} %>
       <% experiment.goals.each do |g| %>
         <%= erb :_experiment, :locals => {:goal => g, :experiment => experiment} %>
       <% end %>
